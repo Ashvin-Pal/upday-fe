@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-
-import { LoginScreen, NotFoundScreen } from "../screens";
+import { Layout } from "../layout";
+import { HomeScreen, LoginScreen, NotFoundScreen } from "../screens";
+import { ProtectedRoutesProtector } from "./ProtectedRoutesProtector";
 
 export const ROUTES = {
 	/* Paths that do not require authentication*/
@@ -16,8 +17,18 @@ export const ROUTES = {
 export function ApplicationRoutes() {
 	return (
 		<Routes>
-			<Route path={ROUTES.LOGIN} element={<LoginScreen />} />
-			<Route path={ROUTES.NOT_FOUND} element={<NotFoundScreen />} />
+			<Route element={<Layout />}>
+				<Route path={ROUTES.LOGIN} element={<LoginScreen />} />
+				<Route
+					path={ROUTES.HOME}
+					element={
+						<ProtectedRoutesProtector>
+							<HomeScreen />
+						</ProtectedRoutesProtector>
+					}
+				/>
+				<Route path={ROUTES.NOT_FOUND} element={<NotFoundScreen />} />
+			</Route>
 		</Routes>
 	);
 }
