@@ -1,3 +1,4 @@
+import { BoardsNewsListWrapper } from "../components";
 import { useAuth } from "../hooks";
 
 import "./HomeScreen.css";
@@ -11,6 +12,7 @@ export function HomeScreen() {
 			<div className="HomeScreen__Header">
 				<h2>Welcome {username}</h2>
 			</div>
+			<BoardsNewsListWrapper />
 		</section>
 	);
 }
