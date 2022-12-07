@@ -25,7 +25,7 @@ describe("[News Create Screen]", () => {
 	afterEach(() => server.resetHandlers());
 	afterAll(() => server.close());
 
-	test("Renders Create Edit Screen in create mode succesfully", async () => {
+	test("Renders Create Edit Screen in create mode successfully", async () => {
 		const defaultContextValues = {
 			email: "stella@upday.com",
 			isAuthenticated: true,
