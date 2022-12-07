@@ -1,4 +1,4 @@
-# Alternative Github UI
+# Upday fe
 
 ## Setup
 
