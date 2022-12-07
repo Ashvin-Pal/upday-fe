@@ -1,8 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import { Layout } from "../layout";
-import { ProtectedRoutesProtector } from "./ProtectedRoutesProtector";
 
-import { LoginScreen } from "../screens";
+import { LoginScreen, NotFoundScreen } from "../screens";
 
 export const ROUTES = {
 	/* Paths that do not require authentication*/
@@ -19,6 +17,7 @@ export function ApplicationRoutes() {
 	return (
 		<Routes>
 			<Route path={ROUTES.LOGIN} element={<LoginScreen />} />
+			<Route path={ROUTES.NOT_FOUND} element={<NotFoundScreen />} />
 		</Routes>
 	);
 }
