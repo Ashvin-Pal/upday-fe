@@ -1,0 +1,15 @@
+/* CSS */
+.ButtonSimple {
+  all: unset;
+  background: transparent;
+  cursor: pointer;
+}
+
+.ButtonSimple:disabled {
+  color: gray;
+  cursor: not-allowed;
+}
+
+.ButtonSimple > span {
+  text-decoration: underline;
+}
