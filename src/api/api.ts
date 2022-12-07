@@ -4,6 +4,11 @@ export const API = {
   GET_BOARDS: `${BASE_URL}/board`,
   GET_NEWS_BY_BOARD_ID: (id: string) => `${BASE_URL}/board/${id}/news`,
   GET_NEWS_BY_ID: (id: string) => `${BASE_URL}/news/${id}`,
+  POST_NEWS: `${BASE_URL}/news`,
+  DELETE_NEWS_BY_ID: (id: string) => `${BASE_URL}/news/${id}`,
+  UPDATE_NEWS_BY_ID: `${BASE_URL}/news`,
+  UPDATE_NEWS_STATUS_BY_ID: (id: string, status: NEWS_STATUS) => `${BASE_URL}/news/${id}/${status}`
+
 };
 
 const headers = {
@@ -12,7 +17,7 @@ const headers = {
 
 export const postNews = async (payload: any): Promise<{ name: string; id: string }[]> => {
   return await (
-    await fetch(`${BASE_URL}/news`, {
+    await fetch(API.POST_NEWS, {
       headers,
       method: "POST",
       body: JSON.stringify(payload),
@@ -22,7 +27,7 @@ export const postNews = async (payload: any): Promise<{ name: string; id: string
 
 export const deleteNewsById = async (id: string) => {
   return await (
-    await fetch(`${BASE_URL}/news/${id}`, {
+    await fetch(API.DELETE_NEWS_BY_ID(id), {
       headers,
       method: "DELETE",
     })
@@ -31,7 +36,7 @@ export const deleteNewsById = async (id: string) => {
 
 export const updateNewsById = async (payload: any) => {
   return (
-    await fetch(`${BASE_URL}/news`, {
+    await fetch(API.UPDATE_NEWS_BY_ID, {
       headers,
       method: "PUT",
       body: JSON.stringify(payload),
@@ -47,7 +52,7 @@ export enum NEWS_STATUS {
 
 export const updateNewsStatusById = async (id: string, status: NEWS_STATUS) => {
   return (
-    await fetch(`${BASE_URL}/news/${id}/${status}`, {
+    await fetch(API.UPDATE_NEWS_STATUS_BY_ID(id, status), {
       headers,
       method: "POST",
     })
