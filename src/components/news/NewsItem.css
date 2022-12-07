@@ -1,0 +1,31 @@
+.NewsItem {
+	list-style: none;
+	display: grid;
+	align-items: center;
+	height: 6rem;
+	grid-template-areas: "title status actions";
+	grid-template-columns: 2fr 5rem 1fr;
+	gap: var(--space-md);
+	border-bottom: 1px solid grey;
+}
+
+.NewsItem__Title {
+	grid-area: title;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	font-weight: normal;
+}
+
+.NewsItem__Status {
+	grid-area: status;
+	display: flex;
+	justify-content: center;
+}
+
+.NewsItem__Actions {
+	grid-area: actions;
+	display: flex;
+	justify-content: flex-end;
+	gap: var(--space-md);
+}

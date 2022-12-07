@@ -3,6 +3,7 @@ import { API } from "../../api";
 import { useGet } from "../../hooks";
 import { GeneralErrorMsg } from "../error";
 import { LoadingIndicator } from "../loading";
+import { NewsList } from "../news";
 import { BoardList } from "./BoardList";
 
 export interface BoardsListResType {
@@ -37,6 +38,7 @@ export function BoardsNewsListWrapper() {
 				boardsList={data}
 				currentSelectedBoard={currentBoard}
 			/>
+			{currentBoard && <NewsList id={currentBoard} />}
 		</section>
 	);
 }

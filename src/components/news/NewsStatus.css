@@ -1,0 +1,25 @@
+.NewsStatus {
+  text-transform: capitalize;
+  padding: var(--space-xxs) var(--space-xs);
+  width: min-content;
+  border-radius: var(--border-radius-lg);
+  text-align: center;
+  font-size: smaller;
+  color: var(--color-white);
+}
+
+.NewsStatus.draft {
+  background-color: var(--color-draft);
+}
+
+.NewsStatus.published {
+  background-color: var(--color-published);
+}
+
+.NewsStatus.archived {
+  background-color: var(--color-archive);
+}
+
+.NewsStatus.archive {
+  background-color: var(--color-archive);
+}

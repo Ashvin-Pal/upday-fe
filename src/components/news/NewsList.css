@@ -1,0 +1,40 @@
+.NewsList {
+  margin: 0 var(--space-xxl);
+  padding: var(--space-md);
+}
+
+.NewsList__List {
+  margin: 0;
+  padding: 0;
+}
+
+.NewsList__Header {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  align-items: center;
+  height: 6rem;
+  grid-template-areas: "title status actions";
+  grid-template-columns: 2fr 5rem 1fr;
+  gap: var(--space-md);
+}
+
+.NewsList__Header__Title {
+  grid-area: title;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-decoration: underline;
+}
+
+.NewsList__Header__Status {
+  grid-area: status;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.NewsList__Header__Actions {
+  grid-area: actions;
+  text-align: center;
+  text-decoration: underline;
+}
