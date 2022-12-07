@@ -11,7 +11,7 @@ describe("[Login Screen]", () => {
 	beforeEach(() => {
 		handleSuccess = jest.fn();
 		user = userEvent.setup();
-		render(<LoginForm handleSucess={handleSuccess} />);
+		render(<LoginForm handleSuccess={handleSuccess} />);
 	});
 
 	test("Renders login form correctly", async () => {

@@ -51,7 +51,7 @@ describe("[Create news form]", () => {
 	afterEach(() => server.resetHandlers());
 	afterAll(() => server.close());
 
-	test("Populating a form from the backend and resubmitting it back should call the handle sucess function", async () => {
+	test("Populating a form from the backend and resubmitting it back should call the handle success function", async () => {
 		render(
 			<NewsFormEditWrapper
 				id="1234"
@@ -98,7 +98,7 @@ describe("[Create news form]", () => {
 		await waitFor(() => expect(handleError).not.toHaveBeenCalled());
 	});
 
-	test("Handle Error is called when the form is succesfully submitted, but the backend returns a 500", async () => {
+	test("Handle Error is called when the form is successfully submitted, but the backend returns a 500", async () => {
 		server.use(
 			rest.put(API.POST_NEWS, (req, res, ctx) => {
 				return res(ctx.status(500));

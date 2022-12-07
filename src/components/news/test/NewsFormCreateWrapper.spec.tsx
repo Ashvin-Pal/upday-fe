@@ -113,7 +113,7 @@ describe("[Create news form]", () => {
 		await waitFor(() => expect(handleError).not.toHaveBeenCalled());
 	});
 
-	test("Handle Error is called when the form is succesfully submitted, but the backend returns a 500", async () => {
+	test("Handle Error is called when the form is successfully submitted, but the backend returns a 500", async () => {
 		server.use(
 			rest.post(API.POST_NEWS, (req, res, ctx) => {
 				return res(ctx.status(500));

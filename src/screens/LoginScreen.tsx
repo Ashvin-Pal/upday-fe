@@ -15,7 +15,7 @@ export function LoginScreen() {
 
 	return (
 		<div className="Login">
-			<LoginForm handleSucess={handleSuccess} />
+			<LoginForm handleSuccess={handleSuccess} />
 		</div>
 	);
 }
