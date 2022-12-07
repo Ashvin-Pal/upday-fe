@@ -1,4 +1,5 @@
 import { Component, ErrorInfo, ReactNode } from "react";
+import { GeneralErrorMsg } from "./GeneralErrorMsg";
 
 interface Props {
 	children?: ReactNode;
@@ -24,7 +25,7 @@ export class ErrorBoundary extends Component<Props, State> {
 
 	public render() {
 		if (this.state.hasError) {
-			return <h1>Something went wrong</h1>;
+			return <GeneralErrorMsg />;
 		}
 
 		return this.props.children;
