@@ -1,7 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
+
+:root {
+	font-family: "Poppins", sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: none; /* for iOS Safari */
+	text-size-adjust: none; /* for other mobile browsers */
+	scroll-behavior: smooth;
+
+	--color-error: #ff9494;
+	--color-draft: #285766;
+	--color-published: #005a00;
+	--color-archive: #3c3e42;
+	--color-white: white;
+	--color-black: black;
+	--color-grey: grey;
+	--color-light-grey: lightgrey;
+
+	--box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+	--space-unit: 1em;
+	--space-xxs: calc(0.25 * var(--space-unit));
+	--space-xs: calc(0.5 * var(--space-unit));
+	--space-sm: calc(0.75 * var(--space-unit));
+	--space-md: calc(1.25 * var(--space-unit));
+	--space-lg: calc(2 * var(--space-unit));
+	--space-xl: calc(3.25 * var(--space-unit));
+	--space-xxl: calc(5.25 * var(--space-unit));
+
+	--border-radius-sm: calc(0.5 * var(--space-unit));
+	--border-radius-md: calc(1.25 * var(--space-unit));
+	--border-radius-lg: calc(2 * var(--space-unit));
+
+	--max-width: 1280px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  display: flex;
-  min-height: 100vh;
-  width: 100%;
-  color: var(--color-black);
+	margin: 0;
+	display: flex;
+	min-height: 100vh;
+	width: 100%;
+	color: var(--color-black);
+}
+
+body > div {
+	display: flex;
+	flex: 1;
+}
+
+main {
+	display: inherit;
+	flex: inherit;
+	flex-direction: column;
+}
+
+nav {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	background-color: black;
+}
+
+.content {
+	display: flex;
+	flex: 1;
+}
+
+.max-width {
+	max-width: var(--max-width);
+}
+
+label {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	font-size: large;
+}
+
+h1 {
+	font-size: 3em;
+}
+h2 {
+	font-size: 2em;
+}
+h3 {
+	font-size: 1.5em;
+}
+h4 {
+	font-size: 1.25em;
+}
+h5 {
+	font-size: 1em;
+}
+h6 {
+	font-size: 0.75em;
 }
