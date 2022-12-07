@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { Layout } from "../layout";
-import { HomeScreen, LoginScreen, NotFoundScreen } from "../screens";
+import { HomeScreen, LoginScreen, NotFoundScreen, NewsCreateEditScreen } from "../screens";
 import { ProtectedRoutesProtector } from "./ProtectedRoutesProtector";
 
 export const ROUTES = {
@@ -24,6 +24,22 @@ export function ApplicationRoutes() {
 					element={
 						<ProtectedRoutesProtector>
 							<HomeScreen />
+						</ProtectedRoutesProtector>
+					}
+				/>
+				<Route
+					path={ROUTES.NEWS_FORM}
+					element={
+						<ProtectedRoutesProtector>
+							<NewsCreateEditScreen />
+						</ProtectedRoutesProtector>
+					}
+				/>
+				<Route
+					path={ROUTES.NEWS_FORM_WITH_ID(":id")}
+					element={
+						<ProtectedRoutesProtector>
+							<NewsCreateEditScreen />
 						</ProtectedRoutesProtector>
 					}
 				/>
