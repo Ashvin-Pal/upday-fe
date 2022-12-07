@@ -19,7 +19,7 @@ describe("[Login Screen]", () => {
 		expect(screen.getByLabelText("Your email")).toBeInTheDocument();
 		expect(screen.getByRole("button")).toHaveTextContent("Sign in");
 
-		const emailField = screen.getByRole("textbox", { name: /email/i });
+		const emailField = screen.getByLabelText("Your email");
 		expect(emailField).toHaveAttribute("placeholder", "stella@upday.com");
 	});
 
@@ -27,7 +27,7 @@ describe("[Login Screen]", () => {
 		const user = userEvent.setup();
 		const testEmail = "newsAgent@upday.com";
 
-		const emailField = screen.getByRole("textbox", { name: /email/i });
+		const emailField = screen.getByLabelText("Your email");
 		await user.type(emailField, testEmail);
 		await user.click(screen.getByRole("button"));
 		expect(screen.queryByRole("alert")).toBeNull();
@@ -36,7 +36,7 @@ describe("[Login Screen]", () => {
 
 	test("Display error message and do not submit form when email is invalid", async () => {
 		const testEmail = "newsAgent";
-		const emailField = screen.getByRole("textbox", { name: /email/i });
+		const emailField = screen.getByLabelText("Your email");
 		await user.type(emailField, testEmail);
 		await user.click(screen.getByRole("button"));
 		expect(screen.getByRole("alert")).toHaveTextContent("Invalid email");

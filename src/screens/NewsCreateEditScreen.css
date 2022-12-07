@@ -1,0 +1,25 @@
+.News__Form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  min-width: 40rem;
+  padding-bottom: 6rem;
+}
+
+.News__Form__Header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+}
+
+.News__Form .Form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--box-shadow);
+}
