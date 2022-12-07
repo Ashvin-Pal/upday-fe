@@ -1,0 +1,22 @@
+.Select__Input {
+  display: flex;
+  flex-direction: column;
+}
+
+.Select__Input select {
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  padding: var(--space-sm) var(--space-xxs);
+  border: none;
+  border-bottom: 1px solid grey;
+  outline: none;
+}
+
+.Select__Input select:focus {
+  border-bottom: 1px solid var(--color-black);
+}
+
+.Select__Input label {
+  padding: 0 var(--space-xxs);
+}

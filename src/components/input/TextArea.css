@@ -1,0 +1,30 @@
+.TextArea {
+  display: flex;
+  flex-direction: column;
+}
+
+.TextArea textarea {
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  padding: var(--space-sm) var(--space-xs);
+  border: none;
+  border-bottom: 1px solid var(--color-grey);
+  outline: none;
+  transition: border 0.2s ease-in-out 0.1s, background-color 0.2s ease-in-out 0.1s;
+}
+
+.TextArea textarea:focus {
+  border-bottom: 1px solid var(--color-black);
+  background-color: var(--color-light-grey);
+}
+
+.TextArea label {
+  padding: 0 var(--space-xxs);
+}
+
+.TextArea .Field__Error__Msg {
+  padding: var(--space-xs) var(--space-xs);
+  color: var(--color-error);
+  font-size: small;
+}
