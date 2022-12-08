@@ -25,7 +25,7 @@ const isNewsReadyForPublishing = ({
 	return false;
 };
 
-interface NewsItemType {
+interface NewsItemComponentType {
 	id: string;
 	title: string;
 	author: string;
@@ -35,7 +35,7 @@ interface NewsItemType {
 	handleSuccess(): void;
 }
 
-export function NewsItem(props: NewsItemType) {
+export function NewsItem(props: NewsItemComponentType) {
 	const { id, title, status, handleSuccess } = props;
 	const navigate = useNavigate();
 

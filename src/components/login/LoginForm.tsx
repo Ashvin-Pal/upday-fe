@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "../button";
 import { TextInput } from "../input";
 
-const validateEmail = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
+const validateEmail = new RegExp(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/);
 
 interface FormStateType {
 	isValid: boolean;

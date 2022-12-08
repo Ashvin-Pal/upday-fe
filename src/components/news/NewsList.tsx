@@ -7,12 +7,12 @@ import { NewsItem } from "./NewsItem";
 import "./NewsList.css";
 
 export interface NewsResType {
-	drafts: Archive[];
-	published: Archive[];
-	archives: Archive[];
+	drafts: NewsItemType[];
+	published: NewsItemType[];
+	archives: NewsItemType[];
 }
 
-export interface Archive {
+export interface NewsItemType {
 	id: string;
 	boardId: string;
 	author: string;

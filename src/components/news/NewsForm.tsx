@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NEWS_STATUS } from "../../api";
-import { BoardsListResType } from "../boards";
+import type { BoardsListResType } from "../boards";
 import { Button } from "../button";
 import { SelectInput, TextArea, TextInput } from "../input";
 import { NewsStatus } from "./NewsStatus";

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { API, NEWS_STATUS, postNews } from "../../api";
 import { useAuth, useGet } from "../../hooks";
-import { BoardsListResType } from "../boards";
+import type { BoardsListResType } from "../boards";
 import { GeneralErrorMsg } from "../error";
 import { LoadingIndicator } from "../loading";
 import { NewsForm } from "./NewsForm";
