@@ -1,10 +1,21 @@
 import { useState } from "react";
-import { API, updateNewsById } from "../../api";
+import { API, NEWS_STATUS, updateNewsById } from "../../api";
 import { useGet } from "../../hooks";
-import { BoardsListResType } from "../boards";
+import type { BoardsListResType } from "../boards";
 import { GeneralErrorMsg } from "../error";
 import { LoadingIndicator } from "../loading";
 import { NewsForm } from "./NewsForm";
+
+export interface NewsItem {
+	id: string;
+	boardId: string;
+	author: string;
+	title: string;
+	description: string;
+	imageURL: string;
+	status: NEWS_STATUS;
+	CreatedAt: string;
+}
 
 interface NewsFormEditWrapperType {
 	id: string;
@@ -13,7 +24,7 @@ interface NewsFormEditWrapperType {
 }
 
 export function NewsFormEditWrapper({ id, handleSuccess, handleError }: NewsFormEditWrapperType) {
-	const { data: newsById, error: newsByIdError } = useGet<any>(API.GET_NEWS_BY_ID(id));
+	const { data: newsById, error: newsByIdError } = useGet<NewsItem>(API.GET_NEWS_BY_ID(id));
 	const { data: boardList, error: boardsListError } = useGet<BoardsListResType[]>(API.GET_BOARDS);
 	const [isSubmitting, setSubmitting] = useState(false);
 

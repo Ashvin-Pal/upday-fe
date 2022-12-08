@@ -75,7 +75,7 @@ export function useGet<T = unknown>(url: string, options?: RequestInit): State<T
     return () => {
       cancelRequest.current = true;
     };
-  }, [url, retrigger]);
+  }, [url, retrigger, options]);
 
   return { ...state, revalidate };
 }

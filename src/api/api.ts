@@ -1,3 +1,5 @@
+import type { NewsItemType } from "../components/news";
+
 const BASE_URL = "http://localhost:8080/v1";
 
 export const API = {
@@ -15,7 +17,7 @@ const headers = {
   'Content-Type': 'application/json'
 }
 
-export const postNews = async (payload: any): Promise<{ name: string; id: string }[]> => {
+export const postNews = async (payload: NewsItemType): Promise<{ name: string; id: string }[]> => {
   return await (
     await fetch(API.POST_NEWS, {
       headers,
@@ -34,7 +36,7 @@ export const deleteNewsById = async (id: string) => {
   ).json();
 };
 
-export const updateNewsById = async (payload: any) => {
+export const updateNewsById = async (payload: NewsItemType) => {
   return (
     await fetch(API.UPDATE_NEWS_BY_ID, {
       headers,
